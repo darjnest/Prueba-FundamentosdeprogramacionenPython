@@ -1,4 +1,3 @@
-import preguntas as p
 import random
 from shuffle import shuffle_alt
 
