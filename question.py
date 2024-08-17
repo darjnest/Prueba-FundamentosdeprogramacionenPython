@@ -1,4 +1,5 @@
 import random
+import preguntas as p  
 from shuffle import shuffle_alt
 
 def choose_q(dificultad):
