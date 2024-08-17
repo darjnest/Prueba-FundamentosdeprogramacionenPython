@@ -2,28 +2,22 @@ import preguntas as p
 import random
 from shuffle import shuffle_alt
 
-# Opciones dadas para escoger.
-###############################################
-opciones = {'basicas': [1,2,3],
-            'intermedias': [1,2,3],
-            'avanzadas': [1,2,3]}
-###############################################
-
 def choose_q(dificultad):
-    #escoger preguntas por dificultad
-    preguntas = 
+    # Escoger preguntas por dificultad
+    preguntas = list(p.pool_preguntas[dificultad].keys())
     
-    # usar opciones desde ambiente global
-    global 
-    # escoger una pregunta
-    n_elegido = 
-    # eliminarla del ambiente global para no escogerla de nuevo
+    # Usar opciones desde ambiente global
+    global opciones
     
+    # Escoger una pregunta
+    n_elegido = random.choice(opciones[dificultad])
     
-    # escoger enunciado y alternativas mezcladas
-    pregunta = 
-    alternativas = 
+    # Eliminarla del ambiente global para no escogerla de nuevo
+    opciones[dificultad].remove(n_elegido)
     
+    # Escoger enunciado y alternativas mezcladas
+    pregunta = p.pool_preguntas[dificultad][f'pregunta_{n_elegido}']
+    alternativas = shuffle_alt(pregunta)
     
     return pregunta['enunciado'], alternativas
 
