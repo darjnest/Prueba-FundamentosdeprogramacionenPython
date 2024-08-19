@@ -1,8 +1,8 @@
 import random
-import preguntas as p  # Assuming 'preguntas' is the module containing 'pool_preguntas'
+import preguntas as p  
 from shuffle import shuffle_alt
 
-# Define the global 'opciones' variable
+# Define las opciones globales 
 opciones = {'basicas': [1, 2, 3],
             'intermedias': [1, 2, 3],
             'avanzadas': [1, 2, 3]}
@@ -11,7 +11,7 @@ def choose_q(dificultad):
     # Escoger preguntas por dificultad
     preguntas = list(p.pool_preguntas[dificultad].keys())
     
-    # Use the global 'opciones' variable
+    # Usa las opciones globales 
     global opciones
     
     # Escoger una pregunta
